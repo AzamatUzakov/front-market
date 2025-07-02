@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.animate {
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.animated-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
