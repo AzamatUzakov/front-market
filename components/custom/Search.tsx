@@ -1,5 +1,4 @@
 import { Input } from "@/components/ui/input";
-import { CiSearch } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
 
 

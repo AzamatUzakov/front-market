@@ -44,9 +44,9 @@ const Navigation: React.FC<Props> = () => {
 
 
     return (
-        
+
         <>
-            <nav>
+            <nav className="lg:hidden">
                 <div className="flex w-full justify-between gap-1 items-center  bg-white px-2 py-2">
                     {navItems.map((item, index) => {
                         const isAct = pathName === item.href;
