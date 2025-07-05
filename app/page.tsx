@@ -1,5 +1,6 @@
 // app/page.tsx или pages/index.tsx
 import DogSection from "@/components/custom/DogSection";
+import Hero from "@/components/custom/Hero";
 import Search from "@/components/custom/Search";
 
 type CartItem = {
@@ -16,6 +17,8 @@ export default async function Home() {
       <div className="pt-2 pl-2 pr-2 pb-3 lg:px-4">
         
         <div className="lg:hidden"> <Search /></div>
+<Hero/>
+
         <h1>Войдите в аккаунт</h1>
 
         <DogSection />

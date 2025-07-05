@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -13,4 +12,36 @@ body {
 .animated-btn:hover {
     background-color: #45a049;
     transform: scale(1.1);
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.animate {
+    transition: .3s ease;
+}
+
+.swiper-pagination-bullet {
+    background-color: #F2590D !important;
+    opacity: 1;
+}
+
+.lexend_font{
+    font-family: "Lexend", sans-serif;
+}
+
+.btn_animate:hover{
+    transition: .4s ease;
+    background-color: #5eeb42e5;
+    scale: 0.9;
 }
