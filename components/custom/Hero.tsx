@@ -26,10 +26,10 @@ const Hero: React.FC = () => {
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
-                    /* autoplay={{
+                    autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
-                    }} */
+                    }}
                     pagination={{
                         clickable: true,
 
@@ -54,27 +54,27 @@ const Hero: React.FC = () => {
                         </div>
                         <img className="h-full w-full object-cover" src="/cat_main.jpg" alt="go-banner" />
                     </SwiperSlide>
-                   
+
                     <SwiperSlide className="relative">
                         <div className="absolute z-10 bg-[#0000003d] w-full h-full flex flex-col justify-end lg:pl-10 lg:pb-25 p-4 pb-10 ">
                             <div className="text-start">
                                 <h2 className="font-extrabold lg:font-black text-xl lg:text-[40px] text-white lexend_font">АКВАРИУМЫ И РЫБКИ</h2>
                                 <p className="text-sm font-medium lg:text-[18px] text-white lexend_font lg:font-normal leading-4.5  lg:leading-6 mt-1 lg:mt-2">  Маленький океан у тебя дома
                                     Аквариумы, фильтры, декор и всё для водных питомцев
-                                <br />
+                                    <br />
                                     Погрузись в мир подводной красоты</p>
                                 <button className="bg-[#5EEB42] text-sm lg:text-[16px] text-black font-bold rounded-3xl border-0 lg:py-3 lg:px-5 cursor-pointer btn_animate transition-all lg:mt-7 mt-4 p-3">В мир аквариумов</button>
                             </div>
                         </div>
                         <img className="h-full w-full object-cover" src="/fish.jpg" alt="fish_banner" />
                     </SwiperSlide>
-                    
+
                     <SwiperSlide className="relative">
                         <div className="absolute z-10 bg-[#0000003d] w-full h-full flex flex-col justify-end lg:pl-10 lg:pb-25 p-4 pb-10 ">
                             <div className="text-start">
                                 <h2 className="font-extrabold lg:font-black text-xl lg:text-[40px] text-white lexend_font">ЛЕКАРСТВА И УХОД</h2>
                                 <p className="text-sm font-medium lg:text-[18px] text-white lexend_font lg:font-normal leading-4.5  lg:leading-6 mt-1 lg:mt-2">Здоровье твоего питомца — в надёжных руках
-                                Витамины, средства от паразитов, лечение и уход
+                                    Витамины, средства от паразитов, лечение и уход
                                     <br />
                                     Доставка по всему Узбекистану</p>
                                 <button className="bg-[#5EEB42] text-sm lg:text-[16px] text-black font-bold rounded-3xl border-0 lg:py-3 lg:px-5 cursor-pointer btn_animate transition-all lg:mt-7 mt-4 p-3">Заботиться сейчас</button>
@@ -82,26 +82,26 @@ const Hero: React.FC = () => {
                         </div>
                         <img className="h-full w-full object-cover" src="/med_cat.jpg" alt="med_dog.jpg" />
                     </SwiperSlide>
-                    
+
                     <SwiperSlide className="relative">
                         <div className="absolute z-10 bg-[#0000003d] w-full h-full flex flex-col justify-end lg:pl-10 lg:pb-25 p-4 pb-10 ">
                             <div className="text-start">
                                 <h2 className="font-extrabold lg:font-black text-xl lg:text-[40px] text-white lexend_font">ВСЁ ДЛЯ УЮТА И ИГР</h2>
                                 <p className="text-sm font-medium lg:text-[18px] text-white lexend_font lg:font-normal leading-4.5  lg:leading-6 mt-1 lg:mt-2">Игрушки, лежанки, домики и когтеточки
-                                Сделай дом комфортным для питомца
+                                    Сделай дом комфортным для питомца
                                     <br />Уют — это важно не только для людей</p>
                                 <button className="bg-[#5EEB42] text-sm lg:text-[16px] text-black font-bold rounded-3xl border-0 lg:py-3 lg:px-5 cursor-pointer btn_animate transition-all lg:mt-7 mt-4 p-3">Товары для комфорта</button>
                             </div>
                         </div>
                         <img className="h-full w-full object-cover" src="/play_dog.jpg" alt="play_dog" />
                     </SwiperSlide>
-                    
+
                     <SwiperSlide className="relative">
                         <div className="absolute z-10 bg-[#0000003d] w-full h-full flex flex-col justify-end lg:pl-10 lg:pb-25 p-4 pb-10 ">
                             <div className="text-start">
                                 <h2 className="font-extrabold lg:font-black text-xl lg:text-[40px] text-white lexend_font">СКИДКИ И АКЦИИ КАЖДУЮ НЕДЕЛЮ</h2>
                                 <p className="text-sm font-medium lg:text-[18px] text-white lexend_font lg:font-normal leading-4.5  lg:leading-6 mt-1 lg:mt-2">Лови выгоду — до -10% на любимые товары
-                                Только на этой неделе!
+                                    Только на этой неделе!
                                     <br /> Акции обновляются постоянно — не пропусти!</p>
                                 <button className="bg-[#5EEB42] text-sm lg:text-[16px] text-black font-bold rounded-3xl border-0 lg:py-3 lg:px-5 cursor-pointer btn_animate transition-all lg:mt-7 mt-4 p-3">Смотреть скидки</button>
                             </div>

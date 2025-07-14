@@ -23,7 +23,6 @@ export default async function RootLayout({
 
           <div className="main-container relative h-full w-full">
             {children}
-
             <div className="fixed bottom-0 left-0 w-full">
               <Navigation />
             </div>

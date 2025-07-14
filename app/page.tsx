@@ -1,4 +1,5 @@
 // app/page.tsx или pages/index.tsx
+import AllCategories from "@/components/custom/AllCategories";
 import DogSection from "@/components/custom/DogSection";
 import Hero from "@/components/custom/Hero";
 import Search from "@/components/custom/Search";
@@ -19,6 +20,7 @@ export default async function Home() {
         <div className="lg:hidden"> <Search /></div>
 <Hero/>
 
+        <AllCategories/>
         <h1>Войдите в аккаунт</h1>
 
         <DogSection />
