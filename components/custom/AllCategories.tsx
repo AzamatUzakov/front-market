@@ -1,7 +1,10 @@
 "use client"
 
-import { log } from "node:console";
 import { useEffect, useState } from "react";
+
+import { motion } from "framer-motion";
+import { log } from "node:console";
+import { Skeleton } from "../ui/skeleton";
 
 
 interface Product {
@@ -21,6 +24,7 @@ interface Category {
 
 const AllCategories: React.FC = () => {
     const [sliceProduct, setSliceProduct] = useState<{ [key: number]: number }>({})
+    const [loading, setLoading] = useState<boolean>(false);
 
     /* const [categories, setCategories] = useState<Category[]>([]);
 
@@ -178,43 +182,97 @@ const AllCategories: React.FC = () => {
             [categor.id]: (prev[categor.id] || 8) + 4
         }))
 
+
+
+        console.log(sliceProduct[categor.id]);
+
+        if (sliceProduct[categor.id] >= categor.products.length) {
+            console.log("good");
+            setSliceProduct(prev => ({
+                ...prev,
+                [categor.id]: 8
+            }))
+        }
+
     }
 
+
+
+    if (loading) {
+        return (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:grid-cols-5 2xl:grid-cols-6 mt-15">
+                {Array.from({ length: 10 }).map((_, i) => {
+                    return (
+                        <div key={i} className="mb-5">
+                            <Skeleton className="h-[125px] md:h-[200px]  w-full rounded-xl" />
+                            <div className="space-y-2 mt-2">
+                                <Skeleton className="h-4 w-full max-w-[250px]" />
+                                <Skeleton className="h-4 w-full max-w-[200px]" />
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    }
+
+
     return (
-        <div className="space-y-12">
-            {categories.map((category) => (
-                <div key={category.id} className="w-full" >
-                    <h2 className="text-2xl font-bold mb-4">{category.name}</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <>
 
-                        {category.products.length > 0 ?
-                            category.products.slice(0, sliceProduct[category.id] || 8).map((product) => (
-                                <div key={product.id} className="border rounded-lg p-4">
-                                    {product.imageUrl && (
-                                        <img
-                                            src={product.imageUrl}
-                                            alt={product.name}
-                                            className="w-full h-40 object-cover rounded mb-2"
-                                        />
-                                    )}
-                                    <h3 className="font-semibold">{product.name}</h3>
-                                    <p className="text-sm text-gray-600">{product.price} сум</p>
-                                </div>
-                            ))
-                            :
-                            <p className="text-sm text-gray-500 col-span-full">
-                                Товары пока не добавлены в эту категорию.
-                            </p>
-                        }
+            <div className="space-y-12">
+                {categories.map((category) => (
+                    <div key={category.id} className="w-full" >
+                        <h2 className="text-2xl font-bold mb-4 mt-15 text-[#171212] lg:text-4xl">{category.name}</h2>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:grid-cols-5 2xl:grid-cols-6">
 
+                            {category.products.length > 0 ?
+                                category.products.slice(0, sliceProduct[category.id] || 8).map((product) => (
+                                    <motion.div key={product.id}
+                                        initial={{ opacity: 0, y: 40 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, amount: 0.1 }}
+                                        transition={{ duration: 0.5, delay: product.id * 0.01 }}
+                                        className="p-2 mb-5">
+                                        <div>
+                                            {product.imageUrl && (
+                                                <img
+                                                    src={product.imageUrl}
+                                                    alt={product.name}
+                                                    className="w-full h-auto object-cover rounded mb-2"
+                                                />
+                                            )}
+                                            <h3 className="font-medium text-[17px] md:text-[18px] text-[#171212] mt-4">{product.name}</h3>
+                                            <div className="flex flex-col gap-1.5 md:flex-row md:justify-between md:mt-2">
+                                                <p className="text-sm text-[#8A6E61] ">{product.price} сум</p>
+                                                <button className="text-sm bg-[#E88C30] hover:bg-[#d37c26] hover:scale-98 transition-all duration-200 ease-in-out py-2 px-2 font-semibold text-white  md:font-semibold rounded-[8px] cursor-pointer shadow-sm hover:shadow-md">
+                                                    Посмотреть товар
+                                                </button>
+
+                                            </div>
+                                        </div></motion.div>
+                                ))
+                                :
+                                <p className="text-sm text-gray-500 col-span-full">
+                                    Товары пока не добавлены в эту категорию.
+                                </p>
+                            }
+
+                        </div>
+                        <div className="w-full flex justify-center">
+                            <button
+                                onClick={() => show_more(category)}
+                                className="w-[70%] sm:w-[50%] p-3 mt-4 cursor-pointer font-extrabold bg-[#ffbf64] text-[#4E3620] rounded-full shadow-md transition-all duration-200 ease-in-out hover:bg-[#F5E0B9] hover:scale-105 hover:shadow-lg"
+                            >
+                                {sliceProduct[category.id] >= category.products.length ? "Скрыть" : " 🐾 Показать больше"}
+                            </button>
+
+
+                        </div>
                     </div>
-                    <div className="w-full flex justify-center">
-                        <button className="w-[60%] p-3 mt-3 font-black cursor-pointer bg-amber-500 text-white border-0 rounded-[30px] mx-auto"
-                            onClick={() => show_more(category)}>Показать больше</button>
-                    </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </>
     );
 }
 

@@ -4,6 +4,7 @@ import "./custom.css"
 import Navigation from "@/components/custom/Navigation";
 import Header from "@/components/custom/Header";
 import ToggleProvider from "@/context/ToggleContext";
+import Footer from "@/components/custom/Footer";
 
 export const metadata: Metadata = {
   title: "Market Place",
@@ -16,13 +17,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="dark:bg-black">
+    <html lang="en" className="">
+      <body className="">
         <ToggleProvider>{/* Context */}
           <Header />
 
           <div className="main-container relative h-full w-full">
             {children}
+
+            <Footer />
             <div className="fixed bottom-0 left-0 w-full">
               <Navigation />
             </div>
