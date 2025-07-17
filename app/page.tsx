@@ -2,6 +2,7 @@
 import AllCategories from "@/components/custom/AllCategories";
 import DogSection from "@/components/custom/DogSection";
 import Hero from "@/components/custom/Hero";
+import PopularBrands from "@/components/custom/PopularBrands";
 import Search from "@/components/custom/Search";
 
 type CartItem = {
@@ -19,7 +20,7 @@ export default async function Home() {
 
         <div className="lg:hidden"> <Search /></div>
         <Hero />
-
+<PopularBrands/>
         <AllCategories />
         {/*         <h1>Войдите в аккаунт</h1>
  */}

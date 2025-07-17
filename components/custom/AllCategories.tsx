@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
-import { log } from "node:console";
 import { Skeleton } from "../ui/skeleton";
 
+import { FaArrowRightLong } from "react-icons/fa6";
 
 interface Product {
     id: number;
@@ -223,7 +223,7 @@ const AllCategories: React.FC = () => {
             <div className="space-y-12">
                 {categories.map((category) => (
                     <div key={category.id} className="w-full" >
-                        <h2 className="text-2xl font-bold mb-4 mt-15 text-[#171212] lg:text-4xl">{category.name}</h2>
+                        <h2 className="flex items-center gap-6 text-2xl font-bold mb-4 mt-15 text-[#171212] lg:text-4xl">{category.name}  <FaArrowRightLong className="text-[#ffca39] mt-1 hover:ml-4 cursor-pointer transition-all" /></h2>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:grid-cols-5 2xl:grid-cols-6">
 
                             {category.products.length > 0 ?
@@ -237,6 +237,7 @@ const AllCategories: React.FC = () => {
                                         <div>
                                             {product.imageUrl && (
                                                 <img
+                                                    draggable={false}
                                                     src={product.imageUrl}
                                                     alt={product.name}
                                                     className="w-full h-auto object-cover rounded mb-2"

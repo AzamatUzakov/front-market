@@ -13,17 +13,19 @@ body {
     background-color: #45a049;
     transform: scale(1.1);
 }
-
+/* 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #444;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+ */
+.brand-slide{
+    width: 150px !important;
+}
 
 
 
