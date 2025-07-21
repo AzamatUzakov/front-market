@@ -33,7 +33,7 @@ const PopularBrands: React.FC = () => {
     return (
         <>
             <div>
-                <h1 className='text-2xl font-bold mb-4 mt-10 text-[#171212] lg:text-4xl'>Популярные бренды</h1>
+                <h1 className='text-2xl font-bold mb-4 mt-4 text-[#171212] lg:text-4xl'>Популярные бренды</h1>
 
                 <Swiper
                     spaceBetween={10}
