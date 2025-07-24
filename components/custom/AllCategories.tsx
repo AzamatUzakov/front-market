@@ -247,8 +247,7 @@ const AllCategories: React.FC = () => {
                                             <div className="flex flex-col gap-1.5 md:flex-row md:justify-between md:mt-2">
                                                 <p className="text-sm text-[#8A6E61] ">{product.price} сум</p>
                                                 <button className="text-sm bg-[#E88C30] hover:bg-[#d37c26] hover:scale-98 transition-all duration-200 ease-in-out py-2 px-2 font-semibold text-white  md:font-semibold rounded-[8px] cursor-pointer shadow-sm hover:shadow-md">
-                                                    Посмотреть товар
-                                                </button>
+Подробнее                                                </button>
 
                                             </div>
                                         </div></motion.div>
